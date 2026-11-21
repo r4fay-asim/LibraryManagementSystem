@@ -521,8 +521,27 @@ public class LibraryManagementGUI extends JFrame {
      * Handles deleting a book from the catalog.
      */
     private void handleDeleteBook() {
+        String id = txtId.getText() == null ? "" : txtId.getText().trim();
+        if (id.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Validation Error: Book ID cannot be empty.",
+                    "Delete Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(
+                this,
+                "Are you sure you want to permanently delete Book ID '" + id + "'?",
+                "Confirm Book Deletion",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.WARNING_MESSAGE
+        );
+
+        if (confirm != JOptionPane.YES_OPTION) {
+            return;
+        }
+
         try {
-            manager.deleteBook(txtId.getText());
+            manager.deleteBook(id);
             refreshView(false);
             clearForm();
             JOptionPane.showMessageDialog(this, "Book removed from the library.",
