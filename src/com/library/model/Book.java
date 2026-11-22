@@ -4,7 +4,7 @@ package com.library.model;
  * Represents a single book entity in the Library Book Management System,
  * storing its unique ID, title, author, and circulation status.
  *
- * @author Student One, Student Two
+ * @author Rafay Asim, Eesha Siddiqui
  */
 public class Book {
     private final String id;

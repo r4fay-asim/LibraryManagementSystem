@@ -3,7 +3,7 @@ package com.library.model;
 /**
  * Defines the possible circulation statuses for a library book.
  *
- * @author Student One, Student Two
+ * @author Rafay Asim, Eesha Siddiqui
  */
 public enum BookStatus {
     /** Book is available on the shelf for borrowing. */
